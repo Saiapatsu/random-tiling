@@ -1,27 +1,3 @@
-; Wist
-; 2018-07-18
-	; created
-; 2020-07-03
-	; works with 2.10
-	; undirties the result image so that it can be closed without a dialog urging to save
-	; restores the selection on the original image
-	; reread the entire thing, added comments, added nicer whitespace where it makes sense
-; 2020-07-03
-	; applied what I've learned in the past 2 years to rewrite the loops
-; 2020-07-07 09:10:52
-	; tile randomization with hash
-; 2020-07-09 17:31:11
-	; load hash from a flat file instead of trying to calculate it
-; 2020-07-11 00:40:04
-	; revert to loading hash from png
-; 2020-07-14 17:33:17
-	; scale and rotate the output, but make that a separate undo step so that one ctrl z can revert it back to a 1:1
-
-; todo: randomoffset, both for single tiles and random tiles (is the latter even legal in-game?)
-
-; todo https://www.gimp.org/docs/script-fu-update.html
-;      replace deprecated functions aset, cons-array, print
-
 ; floor division
 (define (// a b) (inexact->exact (floor (/ a b))))
 ; floor halve fixnum (i.e. arithmetic shift right once)
@@ -183,5 +159,3 @@
 
 (script-fu-menu-register "script-fu-tile-randomly"
 	"<Image>")
-
-
