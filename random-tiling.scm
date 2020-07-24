@@ -84,7 +84,7 @@
 				(noiseLayer (car (gimp-layer-new outImage size size RGB-IMAGE  "Noise" 100 NORMAL-MODE))) ; layer for random noise
 				(outLayer   (car (gimp-layer-new outImage size size RGBA-IMAGE "Tiles" 100 NORMAL-MODE))) ; layer for output
 				
-				(bytes (cons-array 3 'byte)) ; don't remember, probably an array of 3 bytes (r, g, b)
+				(bytes (make-vector 3 0)) ; don't remember, probably an array of 3 bytes (r, g, b)
 			)
 			
 			(gimp-image-undo-freeze inImage) ; freezes undo stack
@@ -101,8 +101,8 @@
 						#t ; stop when y is outside the image (all pixels have been painted)
 						(begin
 							; create a rgb color ([0;tileN), 0, 0)
-							; (aset bytes 0 (- (random tileN) 1))
-							(aset bytes 0 (modulo (tileHash (+ x hashOffX) (+ y hashOffY)) tileN))
+							; (vector-set! bytes 0 (- (random tileN) 1))
+							(vector-set! bytes 0 (modulo (tileHash (+ x hashOffX) (+ y hashOffY)) tileN))
 							; paint a pixel with it
 							(gimp-drawable-set-pixel noiseLayer x y 3 bytes) ; paint a pixel in the image with the above color
 							; go to the next pixel
