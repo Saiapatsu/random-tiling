@@ -65,6 +65,7 @@
 			
 			(gimp-image-undo-freeze inImage) ; freezes undo stack
 			(gimp-image-undo-disable outImage)
+			
 			(gimp-image-add-layer outImage noiseLayer 0) ; put the layers into the image
 			(gimp-image-add-layer outImage outLayer  -1)
 			
@@ -123,7 +124,7 @@
 			(gimp-rect-select inImage selX selY selW selH CHANNEL-OP-REPLACE FALSE 0)
 			(gimp-image-undo-thaw inImage)
 			; ---
-			(gimp-selection-clear outImage)
+			(gimp-selection-none outImage)
 			(gimp-image-remove-layer outImage noiseLayer)
 			(gimp-image-undo-enable outImage)
 			
