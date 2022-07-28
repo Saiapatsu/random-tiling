@@ -130,7 +130,11 @@
 			; for presentation, scale and rotate. allow this operation to be undone to reveal the original grid
 			(gimp-image-undo-group-start outImage)
 			(gimp-image-scale-full outImage presSize presSize INTERPOLATION-NONE)
+			(gimp-image-undo-group-end outImage)
+			(gimp-image-undo-group-start outImage)
 			(gimp-item-transform-rotate outLayer presAngle TRUE 0 0)
+			(gimp-image-undo-group-end outImage)
+			(gimp-image-undo-group-start outImage)
 			(gimp-image-resize outImage presCanvas presCanvas (* 0.5 (- presCanvas presSize)) (* 0.5 (- presCanvas presSize)))
 			(gimp-image-undo-group-end outImage)
 			
