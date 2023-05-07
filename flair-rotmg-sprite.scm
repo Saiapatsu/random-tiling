@@ -104,18 +104,17 @@ Zoom out as far as possible and disable the safety to continue.")
 	""
 	"2018-06-29"
 	""
-	SF-IMAGE		"Image"			0
-	SF-ADJUSTMENT	"Scale"		'(5 1 16 1 2 0 0)
-	SF-ADJUSTMENT	"Zoom"		'(1 1 8 1 2 0 0)
-	SF-ADJUSTMENT	"Tile width"	'(8 2 64 8 8 0 0)
-	SF-ADJUSTMENT	"Tile height"	'(8 2 64 8 8 0 0)
-	SF-ADJUSTMENT	"Horizontal spacing"	'(2 0 256 1 1 0 0)
-	SF-ADJUSTMENT	"Vertical spacing"	'(2 0 256 1 1 0 0)
-	SF-ADJUSTMENT	"Padding"	'(8 0 4096 1 1 0 0)
-	SF-COLOR		"Shadow color"	'(0 0 0)
-	SF-COLOR		"Outline color"	'(0 0 0)
-	SF-TOGGLE		"Merge layers to grey"	TRUE
-	SF-TOGGLE		"Crop empty space"	TRUE
-	SF-TOGGLE		"Work on huge sheets
-Zoom way out before using this script to make it run faster."	FALSE
+	SF-IMAGE      "Image"                0
+	SF-ADJUSTMENT "Scale"                '(5 1 16 1 2 0 0)
+	SF-ADJUSTMENT "Zoom"                 '(1 1 8 1 2 0 0)
+	SF-ADJUSTMENT "Tile width"           '(8 2 64 8 8 0 0)
+	SF-ADJUSTMENT "Tile height"          '(8 2 64 8 8 0 0)
+	SF-ADJUSTMENT "Horizontal spacing"   '(2 0 256 1 1 0 0)
+	SF-ADJUSTMENT "Vertical spacing"     '(2 0 256 1 1 0 0)
+	SF-ADJUSTMENT "Padding"              '(8 0 4096 1 1 0 0)
+	SF-COLOR      "Shadow color"         '(0 0 0)
+	SF-COLOR      "Outline color"        '(0 0 0)
+	SF-TOGGLE     "Merge layers to grey" TRUE
+	SF-TOGGLE     "Crop empty space"     TRUE
+	SF-TOGGLE     "Work on large images" FALSE
 )
