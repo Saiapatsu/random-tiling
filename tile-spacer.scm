@@ -28,7 +28,8 @@
 						((begin 
 							(gimp-rect-select inImage theMin margin theMax theDim CHANNEL-OP-REPLACE 0 0)
 							(set! theFloat (car (gimp-selection-float inLayer hSpacing 0)))
-							(set! inLayer (car (gimp-image-merge-down inImage theFloat CLIP-TO-BOTTOM-LAYER)))
+							(gimp-floating-sel-anchor theFloat)
+							; (set! inLayer (car (gimp-image-merge-down inImage theFloat CLIP-TO-BOTTOM-LAYER)))
 							(loopTiles theDim (+ theMin tileWidth hSpacing) (- theMax tileWidth))
 						))
 					)
@@ -44,7 +45,8 @@
 						((begin 
 							(gimp-rect-select inImage margin theMin theDim theMax CHANNEL-OP-REPLACE 0 0)
 							(set! theFloat (car (gimp-selection-float inLayer 0 vSpacing)))
-							(set! inLayer (car (gimp-image-merge-down inImage theFloat CLIP-TO-BOTTOM-LAYER)))
+							(gimp-floating-sel-anchor theFloat)
+							; (set! inLayer (car (gimp-image-merge-down inImage theFloat CLIP-TO-BOTTOM-LAYER)))
 							(loopTiles theDim (+ theMin tileHeight vSpacing) (- theMax tileHeight))
 						))
 					)
